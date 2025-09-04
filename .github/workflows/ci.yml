@@ -25,7 +25,7 @@ jobs:
       - name: Install deps
         run: npm ci
 
-            - name: Run Cypress
+      - name: Run Cypress
         run: npm test
         env:
           CI: true
