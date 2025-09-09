@@ -27,3 +27,12 @@ jobs:
         env:
           CI: true
           CYPRESS_baseUrl: https://www.saucedemo.com
+
+      - name: Upload artifacts on fail
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+         name: cypress-artifacts
+         path: |
+          cypress/screenshots/**
+          cypress/videos/**
